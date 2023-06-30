@@ -173,6 +173,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 					_unitOfWork.OrderHeader.UpdateStatus(id, SD.StatusApproved, SD.PaymentStatusApproved);
 					_unitOfWork.Save();
 				}
+				HttpContext.Session.Clear(); // if there are more session, you will empty the session based on the key name
 			}
 
 			List<ShoppingCart> shoppingCarts = _unitOfWork.ShoppingCart
