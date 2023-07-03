@@ -44,7 +44,7 @@ namespace BulkyBook.DataAccess.DbInitializer
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Company)).GetAwaiter().GetResult();
 
                 //if roles are not created, then we will create admin user as well
-                _userManager.CreateAsync(new ApplicationUser
+                _userManager.CreateAsync(new BulkyBook.Models.ApplicationUser
                 {
                     UserName = "alexkakiris@gmail.com",
                     Email = "alexkakiris@gmail.com",
